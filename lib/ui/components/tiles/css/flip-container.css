@@ -1,0 +1,150 @@
+/* Base Styling */
+.tile {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* Sizing Styles */
+.undefined {
+    padding-top: 31%;
+    width: 32%;
+}
+.small {
+    padding-top: 16.2%;
+    width: 16.2%;
+}
+.medium {
+    padding-top: 47%;
+    width: 47%;
+}
+.tall {
+    padding-top: 62%;
+}
+.xtall {
+    padding-top: 62%;
+}
+.wide {
+    padding-top: 31%;
+    width: 62%;
+}
+.xwide {
+    padding-top: 31%;
+    width: 95%;
+}
+.xwide > .tile > .front > i {
+    text-align: left;
+    padding-left: 28%;
+}
+.large {
+    padding-top: 62%;
+    width: 62%;
+}
+.xlarge {
+    padding-top: 62%;
+    width: 95%;
+}
+
+
+
+/* Animation Styling */
+.flip-container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+
+    position: relative;
+    margin: 0 0 3px 3px;
+    float: left;
+
+    -webkit-box-shadow: inset 0 0 20px whitesmoke;
+    -moz-box-shadow: inset 0 0 20px whitesmoke;
+    box-shadow: inset 0 0 20px whitesmoke;
+
+    color: white;
+}
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.flipper {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+}
+
+
+
+/* Text Styling */
+.back > i, .back > label {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.front > svg {
+    display: block;
+    margin: auto;
+    height: 100%;
+}
+
+.front > span {
+    vertical-align: bottom;
+    text-align: right;
+    padding: 15px;
+}
+.front > span, .back > span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    transform: rotateX(0deg);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+.front {
+    z-index: 2;
+}
+.back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    display: table;
+}
+
+
+
+.flipper {
+    background: linear-gradient(90deg, var(--c1, #f6d365), var(--c2, #fda085) 51%, var(--c1, #f6d365)) var(--x, 0)/ 200%;
+}
+.flipper:hover {
+    --x: 100%;
+}
